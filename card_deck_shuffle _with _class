@@ -1,0 +1,12 @@
+class Personne():
+    def __init__(self, nom):
+        self.nom = nom
+
+def deck_cards():
+    cards_type = ["♦", "♣", "♥", "♠"]
+    num = ["A", *range(2, 11), "J", "Q", "K"]
+    deck = [(str(x) + y) for y in cards_type for x in num]
+    return deck
+
+main_deck = deck_cards()
+perso1 = Personne(f"{main_deck}")
