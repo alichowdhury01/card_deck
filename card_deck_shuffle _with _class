@@ -1,12 +1,15 @@
-class Personne():
-    def __init__(self, nom):
-        self.nom = nom
+from copyreg import constructor
+
+
+class Game ():
+    def __init__(self, deck):
+        self.nom = deck
 
 def deck_cards():
     cards_type = ["♦", "♣", "♥", "♠"]
     num = ["A", *range(2, 11), "J", "Q", "K"]
-    deck = [(str(x) + y) for y in cards_type for x in num]
-    return deck
+    full_deck = [(str(x) + y) for y in cards_type for x in num]
+    return full_deck
 
 main_deck = deck_cards()
-perso1 = Personne(f"{main_deck}")
+construction_deck = Game(f"{main_deck}")
